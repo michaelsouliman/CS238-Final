@@ -536,14 +536,15 @@ def run_game(output_path):
         writer.writerow(['s', 'a', 'r', 's\''])
         obs_n = env.reset()
         while not all(done_n):
-            env.render()
             action = env.action_space.sample()
             s, reward_n, s_prime, done_n = env.step(action)
             ep_reward += reward_n
             writer.writerow([str(s), str(action[0]), str(reward_n), str(s_prime)])
 
-n_threads = 10
+init_time = time.time()
+n_threads = 1000
 output_files = [f'./game_{i}.csv' for i in range(n_threads)]
 
 for i in output_files:
     run_game(i)
+print(time.time()-init_time)
