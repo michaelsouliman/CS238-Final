@@ -542,7 +542,7 @@ def run_game(output_path):
             writer.writerow([str(s), str(action[0]), str(reward_n), str(s_prime)])
 
 init_time = time.time()
-n_threads = 1000
+n_threads = 50000
 output_files = [f'./game_{i}.csv' for i in range(n_threads)]
 
 for i in output_files:
