@@ -12,3 +12,5 @@ def get_csv_lengths(folder_path):
 if __name__ == "__main__":
     folder_path = "data/simulations_20"
     get_csv_lengths(folder_path)
+
+# testing
